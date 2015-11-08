@@ -34,7 +34,37 @@ from runner.koan import *
 
 def score(dice):
     # You need to write this method
-    pass
+    if dice == []:
+        return 0
+
+    bonus = 0
+    count = {}
+    score = 0
+
+    for num in dice:
+        if num in count:
+            count[num] += 1
+        else:
+            count[num] = 1
+
+    for num, frequency in count.items():
+        if num == 1 and frequency >= 3:
+            bonus += 1000
+            score += 100 * (frequency - 3)
+        elif num == 1:
+            score = 100 * frequency
+        elif num == 5 and frequency >= 3:
+            bonus += 500
+            score += 50 * (frequency - 3)
+        elif num == 5:
+            score += 50 * frequency
+        elif frequency >= 3:
+            bonus += num * 100
+        else:
+            pass
+
+    return score + bonus
+
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
