@@ -2,6 +2,11 @@
 Python Koans
 ============
 
+Leslie's solution
+-------------------
+
+Find my answers (Python3) on the solutions branch
+
 .. image:: https://travis-ci.org/gregmalcolm/python_koans.png?branch=master
    :target: http://travis-ci.org/gregmalcolm/python_koans
 
